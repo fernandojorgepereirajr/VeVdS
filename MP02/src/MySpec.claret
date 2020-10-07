@@ -1,6 +1,7 @@
 
 systemName "Metro de Londres"
 
+
 usecase "Trajetoria entre Estacoes" {
 	version "0.1" type "set_type" user "Andre, Daniel, Fernando, Matheus e Lucas" date "07/10/2020"
 	actor usuario "Usuario"
@@ -8,21 +9,21 @@ usecase "Trajetoria entre Estacoes" {
 	preCondition "O usuario precisa interagir com o sistema."
 	
 	basic {
-		step 1 usuario "Seleciona a opção 1 - Encontrar Trajeto(s)" af[3]
-		step 2 system "Exibe uma nova mensagem, esperando qual é a estação de origem"
-		step 3 usuario "Insere a estação de origem" af[3]
-		step 4 system "Exibe uma nova mensagem, esperando qual é a estação de destino"
-		step 5 usuario "Insere a estação de destino" af[3] 
-		step 6 system "Exibe uma nova mensagem, esperando qual será a quantidade de trajetos"
+		step 1 usuario "Seleciona a opcao 1 - Encontrar Trajeto(s)" af[3]
+		step 2 system "Exibe uma nova mensagem, esperando qual eh a estacao de origem" ef[1]
+		step 3 usuario "Insere a estacao de origem" af[3]
+		step 4 system "Exibe uma nova mensagem, esperando qual eh a estacao de destino" ef[2]
+		step 5 usuario "Insere a estacao de destino" af[3] 
+		step 6 system "Exibe uma nova mensagem, esperando qual sera a quantidade de trajetos" ef[3]
 		step 7 usuario "Insere a quantidade de trajetos" af[3]
-		step 8 system "Exibe uma nova mensagem, perguntando se deseja excluir linhas "
-		step 9 usuario "Insere se deseja excluir linha ou não " af[1,2,3] //fluxo alternativo
+		step 8 system "Exibe uma nova mensagem, perguntando se deseja excluir linhas " ef[4]
+		step 9 usuario "Insere se deseja excluir linha ou nao " af[1,2,3] //fluxo alternativo
 		step 10 system "Imprime na tela os trajetos"
 	}
 	
 	// Alternatives scenarios here...
-	alternative 1 "Caso o usuario não queira excluir uma linha" {
-		step 1 usuario "Escolhe não excluir linha" bs 10
+	alternative 1 "Caso o usuario nao queira excluir uma linha" {
+		step 1 usuario "Escolhe nao excluir linha" bs 10
 	}
 	alternative 2 "Caso o usuario queira excluir uma linha" {
 		step 1 usuario "Escolhe em excluir alguma linha" 
@@ -30,11 +31,26 @@ usecase "Trajetoria entre Estacoes" {
 		step 3 usuario "Insere a linha a ser excluida"  bs 10
 	}
 	alternative 3 "Caso o usuario deseje sair" { //duvida aqui, talvez?
-		step 1 usuario "sai da aplicação dando Esc para sair"
-		step 2 system "Mostra todo o menu de opções que o usuario pode escolher"
-		step 3 usuario "Seleciona a opção 1 - Encontrar Trajeto(s)"  bs 2
+		step 1 usuario "sai da aplicacao dando Esc para sair"
+		step 2 system "Mostra todo o menu de opcoes que o usuario pode escolher"
+		step 3 usuario "Seleciona a opcao 1 - Encontrar Trajeto(s)"  bs 2
 	}
-	// Exceptions scenarios here...
 	
-	postCondition "Após imprimir os trajetos, é apresenta o menu principal ao usuario"
+	// Exceptions scenarios here...
+	exception 1 "Usuario digita estacao de origem que nao existe" {
+		step 1 system "Retorna a mensagem anterior ate que uma estacao de origem valida seja inserida" bs 2
+	}
+	exception 2 "Usuario digita estacao de destino que nao existe" {
+		step 1 system "Retorna a mensagem anterior ate que uma estacao de origem valida seja inserida" bs 4
+	}
+	
+	exception 3 "Usuario digita quantidade invalida de trajetos" {
+		step 1 system "Sistema continua a execucao" bs 8
+	}
+	
+	exception 4 "Usuario digita uma opcao invalida" {
+		step 1 system "Continua o processamento sem excluir uma linha" bs 10
+	}
+
+	postCondition "Apos imprimir os trajetos, apresenta o menu principal ao usuario"
 }
