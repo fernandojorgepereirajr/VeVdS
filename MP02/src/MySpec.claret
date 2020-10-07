@@ -1,0 +1,35 @@
+/*
+ * This is an example claret specification
+ */
+systemName "Metro de Londres"
+
+usecase "Trajetoria entre Estacoes" {
+	version "0.1" type "set_type" user "Andre, Daniel, Fernando, Matheus e Lucas" date "07/10/2020"
+	actor usuario "Usuario"
+	
+	preCondition "O usuario precisa interagir com o sistema."
+	
+	basic {
+		step 1 usuario "Seleciona a opção 1 - Encontrar Trajeto(s)"
+		step 2 system "Exibe uma nova mensagem, esperando qual é a estação de origem"
+		step 3 usuario "Insere a estação de origem"
+		step 4 system "Exibe uma nova mensagem, esperando qual é a estação de destino"
+		step 5 usuario "Insere a estação de destino"
+		step 6 system "Exibe uma nova mensagem, esperando qual será a quantidade de trajetos"
+		step 7 usuario "Insere a quantidade de trajetos"
+		step 8 system "Exibe uma nova mensagem, perguntando se deseja excluir linhas "
+		step 9 usuario "Insere se deseja excluir linha ou não " af[1,2] //fluxo alternativo
+		step 10 system "Imprime na tela os trajetos"
+	}
+	
+	// Alternatives scenarios here...
+	alternative 1 "Caso o usuario não queira excluir uma linha" {
+		step 1 usuario "Escolhe não excluir linha" bs 10
+	}
+	alternative 2 "Caso o usuario queira excluir uma linha" {
+		step 1 usuario "Escolhe em excluir alguma linha" bs 10
+	}
+	// Exceptions scenarios here...
+	
+	postCondition "final condition", "other condition"
+}

@@ -1,0 +1,28 @@
+1 1
+2 2
+3 3
+4 4
+5 5
+6 6
+7 7
+8 8
+9 9
+10 10
+11 11
+12 12
+13 13
+#
+1 2 [c] O usuario precisa interagir com o sistema.
+2 3 [s] Usuario Seleciona a opção 1 - Encontrar Trajeto(s)
+3 4 [e] system Exibe uma nova mensagem, esperando qual é a estação de origem
+4 5 [s] Usuario Insere a estação de origem
+5 6 [e] system Exibe uma nova mensagem, esperando qual é a estação de destino
+6 7 [s] Usuario Insere a estação de destino
+7 8 [e] system Exibe uma nova mensagem, esperando qual será a quantidade de trajetos
+8 9 [s] Usuario Insere a quantidade de trajetos
+9 10 [e] system Exibe uma nova mensagem, perguntando se deseja excluir linhas 
+10 11 [s] Usuario Insere se deseja excluir linha ou não 
+11 12 [e] system Imprime na tela os trajetos
+12 13 [c] final condition. other condition
+10 11 [s] Usuario Escolhe não excluir linha
+10 11 [s] Usuario Escolhe em excluir alguma linha
