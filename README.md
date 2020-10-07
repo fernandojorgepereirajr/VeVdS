@@ -7,8 +7,8 @@
 
 #### Time:
 * [André](https://github.com/fernandojorge)
-* [Fernando Jorge](https://github.com/fernandojorge)
 * [Daniel José](https://github.com/danieljose)
+* [Fernando Jorge](https://github.com/fernandojorge)
 * [Lucas Jarrier](https://github.com/lucasjarrier)
 * [Matheus Ferreira](https://github.com/ferreramfe)
 
