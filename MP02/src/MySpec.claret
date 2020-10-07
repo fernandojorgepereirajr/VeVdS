@@ -1,6 +1,4 @@
-/*
- * This is an example claret specification
- */
+
 systemName "Metro de Londres"
 
 usecase "Trajetoria entre Estacoes" {
@@ -10,26 +8,33 @@ usecase "Trajetoria entre Estacoes" {
 	preCondition "O usuario precisa interagir com o sistema."
 	
 	basic {
-		step 1 usuario "Seleciona a opÁ„o 1 - Encontrar Trajeto(s)"
-		step 2 system "Exibe uma nova mensagem, esperando qual È a estaÁ„o de origem"
-		step 3 usuario "Insere a estaÁ„o de origem"
-		step 4 system "Exibe uma nova mensagem, esperando qual È a estaÁ„o de destino"
-		step 5 usuario "Insere a estaÁ„o de destino"
-		step 6 system "Exibe uma nova mensagem, esperando qual ser· a quantidade de trajetos"
-		step 7 usuario "Insere a quantidade de trajetos"
+		step 1 usuario "Seleciona a op√ß√£o 1 - Encontrar Trajeto(s)" af[3]
+		step 2 system "Exibe uma nova mensagem, esperando qual √© a esta√ß√£o de origem"
+		step 3 usuario "Insere a esta√ß√£o de origem" af[3]
+		step 4 system "Exibe uma nova mensagem, esperando qual √© a esta√ß√£o de destino"
+		step 5 usuario "Insere a esta√ß√£o de destino" af[3] 
+		step 6 system "Exibe uma nova mensagem, esperando qual ser√° a quantidade de trajetos"
+		step 7 usuario "Insere a quantidade de trajetos" af[3]
 		step 8 system "Exibe uma nova mensagem, perguntando se deseja excluir linhas "
-		step 9 usuario "Insere se deseja excluir linha ou n„o " af[1,2] //fluxo alternativo
+		step 9 usuario "Insere se deseja excluir linha ou n√£o " af[1,2,3] //fluxo alternativo
 		step 10 system "Imprime na tela os trajetos"
 	}
 	
 	// Alternatives scenarios here...
-	alternative 1 "Caso o usuario n„o queira excluir uma linha" {
-		step 1 usuario "Escolhe n„o excluir linha" bs 10
+	alternative 1 "Caso o usuario n√£o queira excluir uma linha" {
+		step 1 usuario "Escolhe n√£o excluir linha" bs 10
 	}
 	alternative 2 "Caso o usuario queira excluir uma linha" {
-		step 1 usuario "Escolhe em excluir alguma linha" bs 10
+		step 1 usuario "Escolhe em excluir alguma linha" 
+		step 2 system "Pergunta qual linha deseja excluir"
+		step 3 usuario "Insere a linha a ser excluida"  bs 10
+	}
+	alternative 3 "Caso o usuario deseje sair" { //duvida aqui, talvez?
+		step 1 usuario "sai da aplica√ß√£o dando Esc para sair"
+		step 2 system "Mostra todo o menu de op√ß√µes que o usuario pode escolher"
+		step 3 usuario "Seleciona a op√ß√£o 1 - Encontrar Trajeto(s)"  bs 2
 	}
 	// Exceptions scenarios here...
 	
-	postCondition "final condition", "other condition"
+	postCondition "Ap√≥s imprimir os trajetos, √© apresenta o menu principal ao usuario"
 }
