@@ -10,7 +10,7 @@
 * [Daniel José](https://github.com/danieljose)
 * [Fernando Jorge](https://github.com/fernandojorge)
 * [Lucas Jarrier](https://github.com/lucasjarrier)
-* [Matheus Ferreira](https://github.com/ferreramfe)
+* [Matheus Ferreira](https://github.com/ferreiramfe)
 
 
 
