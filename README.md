@@ -6,7 +6,7 @@
 #### [Documentação](https://google.com)
 
 #### Time:
-* [André](https://github.com/fernandojorge)
+* [André](https://github.com/andrefqms)
 * [Daniel José](https://github.com/danieljose)
 * [Fernando Jorge](https://github.com/fernandojorge)
 * [Lucas Jarrier](https://github.com/lucasjarrier)
