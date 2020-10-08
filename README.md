@@ -6,11 +6,11 @@
 #### [Documentação](https://google.com)
 
 #### Time:
-* [André](https://github.com/andrefqms)
-* [Daniel José](https://github.com/danieljose)
-* [Fernando Jorge](https://github.com/fernandojorge)
+* [André Filipe](https://github.com/andrefqms)
+* [Daniel José](https://github.com/danieljoose)
+* [Fernando Jorge](https://github.com/fernandojorgepereirajr)
 * [Lucas Jarrier](https://github.com/lucasjarrier)
-* [Matheus Ferreira](https://github.com/ferreiramfe)
+* [Matheus Ferreira](https://github.com/Ferreiramfe)
 
 
 
