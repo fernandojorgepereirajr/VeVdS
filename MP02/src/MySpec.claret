@@ -9,7 +9,7 @@ usecase "Trajetoria entre Estacoes" {
 	preCondition "O usuario precisa interagir com o sistema."
 	
 	basic {
-		step 1 usuario "Seleciona a opcao 1 - Encontrar Trajeto(s)" af[3]
+		step 1 usuario "Seleciona a opcao 1 - Encontrar Trajeto(s)" 
 		step 2 system "Exibe uma nova mensagem, esperando qual eh a estacao de origem" ef[1]
 		step 3 usuario "Insere a estacao de origem" af[3]
 		step 4 system "Exibe uma nova mensagem, esperando qual eh a estacao de destino" ef[2]
